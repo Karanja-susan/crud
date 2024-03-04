@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% if form.instance.id %}
+            Edit task{% else %}create Task{% endif %}</title>
+</head>
+<body>
+<h1>{% if form.instance.id %}
+     Edit task{% else %}Create Task{% endif %}</h1>
+<form action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'task_list' %}"></a>
+</body>
+</html>
